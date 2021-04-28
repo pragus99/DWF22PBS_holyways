@@ -44,10 +44,10 @@ const Navbar = () => {
   return (
     <>
       <Modal show={showLogin} handleClose={handleCloseLogin}>
-        <Login toggle={toggleToRegister} />
+        <Login toggle={toggleToRegister} handleClose={handleCloseLogin} />
       </Modal>
       <Modal show={showRegister} handleClose={handleCloseRegister}>
-        <Register toggle={toggleToLogin} />
+        <Register toggle={toggleToLogin} handleClose={handleCloseLogin} />
       </Modal>
 
       <nav className="navbar1">

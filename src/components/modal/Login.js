@@ -1,13 +1,11 @@
-import { useHistory } from "react-router-dom";
 import { useState } from "react";
 import { useContext } from "react";
 import { UserContext } from "../service/userContext";
 
-const Login = ({ toggle }) => {
+const Login = ({ toggle, handleClose }) => {
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
 
-  const history = useHistory();
   const [, dispatch] = useContext(UserContext);
 
   const handleLogin = (e) => {
@@ -24,7 +22,7 @@ const Login = ({ toggle }) => {
               dispatch({
                 type: "login",
               }),
-              history.push("/"),
+              handleClose(),
             ];
           } else {
             alert("Wrong password/email");

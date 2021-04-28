@@ -1,11 +1,9 @@
-import { useHistory } from "react-router-dom";
 import { useState } from "react";
 
-const Register = ({ toggle }) => {
+const Register = ({ toggle, handleClose }) => {
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
   const [fullName, setFullName] = useState("");
-  const history = useHistory();
 
   const handleRegister = (e) => {
     e.preventDefault();
@@ -15,7 +13,7 @@ const Register = ({ toggle }) => {
       headers: { "Content-Type": "application/json" },
       body: JSON.stringify(users),
     }).then(() => {
-      history.push("/");
+      handleClose();
     });
   };
 

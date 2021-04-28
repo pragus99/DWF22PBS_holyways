@@ -37,10 +37,10 @@ const Card1 = ({ data, button, link }) => {
   return (
     <>
       <Modal show={showLogin} handleClose={handleCloseLogin}>
-        <Login toggle={toggleToRegister} />
+        <Login toggle={toggleToRegister} handleClose={handleCloseLogin} />
       </Modal>
       <Modal show={showRegister} handleClose={handleCloseRegister}>
-        <Register toggle={toggleToLogin} />
+        <Register toggle={toggleToLogin} handleClose={handleCloseLogin} />
       </Modal>
 
       {data.map((content, index) => (
